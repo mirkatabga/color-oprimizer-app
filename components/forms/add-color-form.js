@@ -1,15 +1,17 @@
-import {Component} from "react"
+import {Component} from "react";
+import PropTypes from "prop-types";
 
 class AddColorForm extends Component{
     constructor(props){
         super(props);
         this.submit = this.submit.bind(this);
+        this.onNewColor = this.props.onNewColor;
     }
 
     submit(e){
         const {_title, _color} = this.refs;
         e.preventDefault();
-        alert(`New color: ${_title.value} ${_color.value}`);
+        this.onNewColor(_title.value, _color.value);
         _title.value = '';
         _color.value = "#000000";
         _title.focus();
@@ -30,6 +32,10 @@ class AddColorForm extends Component{
             </form>
         )
     }
+}
+
+AddColorForm.propTypes ={
+    onNewColor: PropTypes.func,
 }
 
 export default AddColorForm;
