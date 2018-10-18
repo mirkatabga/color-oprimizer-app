@@ -34,7 +34,7 @@ module.exports = {
                     {
                         loader: "css-loader",
                         options: {
-                            modules: true, //enable/disable CSS Modules, default false
+                            modules: false, //enable/disable CSS Modules, default false
                             minimize: true,
                         }
                     },
