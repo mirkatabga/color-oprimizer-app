@@ -7,4 +7,4 @@ const HomeView = () =>
         <AddColorForm onNewColor = {logColor}/>
     </div>
 
-export default HomeView;
+export default HomeView;;
